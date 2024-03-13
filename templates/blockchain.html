@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Decentralized Ledger Viewer</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 36px;
+        margin-top: 50px;
+      }
+
+      table {
+        margin: auto;
+        border-collapse: collapse;
+        width: 80%;
+        margin-top: 50px;
+        margin-bottom: 50px;
+      }
+
+      th {
+        background-color: #333;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        font-weight: normal;
+      }
+
+      td {
+        padding: 10px;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      tr:hover {
+        background-color: #ddd;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Decentralized Ledger Viewer</h1>
+    <table>
+      <tr>
+        <th>Timestamp</th>
+        <th>Entity Name</th>
+        <th>Age</th>
+        <th>Unique ID</th>
+        <th>Land Ownership</th>
+        <th>Block Hash</th>
+        <th>Previous Block Hash</th>
+      </tr>
+      {% for block in decentralized_ledger %}
+      <tr>
+        <td>{{ block.timestamp }}</td>
+        <td>{{ block.entity_name }}</td>
+        <td>{{ block.age }}</td>
+        <td>{{ block.unique_id }}</td>
+        <td>{{ block.land_ownership }}</td>
+        <td>{{ block.block_hash }}</td>
+        <td>{{ block.previous_block_hash }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>
